@@ -148,7 +148,7 @@ export abstract class ApiService {
 
   // email
 
-  protected abstract configureEmail(
+  abstract configureEmail(
     params: RR.ConfigureEmailReq,
   ): Promise<RR.ConfigureEmailRes>
 
