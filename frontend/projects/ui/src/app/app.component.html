@@ -1,4 +1,4 @@
-<tui-root tuiMode="onDark">
+<tui-root [tuiMode]="(themeSwitcher | async) ? 'onDark' : null">
   <ion-app appEnter>
     <ion-content>
       <ion-split-pane
@@ -58,4 +58,7 @@
     <toast-container></toast-container>
   </ion-app>
 </tui-root>
-<tui-theme-night></tui-theme-night>
+<ng-container *ngIf="themeSwitcher | async">
+  <night-theme></night-theme>
+  <tui-theme-night></tui-theme-night>
+</ng-container>

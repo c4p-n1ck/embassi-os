@@ -6,7 +6,7 @@ import { AbstractMarketplaceService } from '@start9labs/marketplace'
 import { MarketplaceService } from 'src/app/services/marketplace.service'
 import { DataModel } from 'src/app/services/patch-db/data-model'
 import { SplitPaneTracker } from 'src/app/services/split-pane.service'
-import { Emver } from '@start9labs/shared'
+import { Emver, ThemeSwitcherService } from '@start9labs/shared'
 import { ConnectionService } from 'src/app/services/connection.service'
 
 @Component({
@@ -90,5 +90,6 @@ export class MenuComponent {
     private readonly splitPane: SplitPaneTracker,
     private readonly emver: Emver,
     private readonly connectionService: ConnectionService,
+    readonly themeSwitcher: ThemeSwitcherService,
   ) {}
 }

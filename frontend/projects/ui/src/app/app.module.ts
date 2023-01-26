@@ -11,6 +11,7 @@ import { IonicModule } from '@ionic/angular'
 import { MonacoEditorModule } from '@materia-ui/ngx-monaco-editor'
 import {
   MarkdownModule,
+  NightThemeModule,
   ResponsiveColModule,
   SharedPipesModule,
 } from '@start9labs/shared'
@@ -60,6 +61,7 @@ import { TuiResizerModule } from '@taiga-ui/cdk'
     TuiResizerModule,
     WidgetsPageModule,
     ResponsiveColModule,
+    NightThemeModule,
   ],
   providers: APP_PROVIDERS,
   bootstrap: [AppComponent],

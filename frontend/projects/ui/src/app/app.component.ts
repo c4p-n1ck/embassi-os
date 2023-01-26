@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core'
 import { merge } from 'rxjs'
 import { PatchDB } from 'patch-db-client'
+import { ThemeSwitcherService } from '@start9labs/shared'
 import { AuthService } from './services/auth.service'
 import { SplitPaneTracker } from './services/split-pane.service'
 import { PatchDataService } from './services/patch-data.service'
@@ -34,6 +35,7 @@ export class AppComponent implements OnDestroy {
     readonly authService: AuthService,
     readonly connection: ConnectionService,
     readonly widgets$: WidgetsService,
+    readonly themeSwitcher: ThemeSwitcherService,
   ) {}
 
   ngOnInit() {
