@@ -10,7 +10,7 @@ import { ApiService } from 'src/app/services/api/embassy-api.service'
 import { ActivatedRoute } from '@angular/router'
 import { PatchDB } from 'patch-db-client'
 import { ServerNameService } from 'src/app/services/server-name.service'
-import { combineLatest, firstValueFrom, map, Observable, of } from 'rxjs'
+import { firstValueFrom, Observable, of } from 'rxjs'
 import { ErrorToastService } from '@start9labs/shared'
 import { EOSService } from 'src/app/services/eos.service'
 import { ClientStorageService } from 'src/app/services/client-storage.service'
@@ -357,29 +357,6 @@ export class ServerShowPage {
   }
 
   settings: ServerSettings = {
-    Backups: [
-      {
-        title: 'Create Backup',
-        description: 'Back up your Embassy and service data',
-        icon: 'duplicate-outline',
-        action: () =>
-          this.navCtrl.navigateForward(['backup'], { relativeTo: this.route }),
-        detail: true,
-        disabled$: of(!this.secure),
-      },
-      {
-        title: 'Restore From Backup',
-        description: 'Restore one or more services from backup',
-        icon: 'color-wand-outline',
-        action: () =>
-          this.navCtrl.navigateForward(['restore'], { relativeTo: this.route }),
-        detail: true,
-        disabled$: combineLatest([
-          this.eosService.updatingOrBackingUp$,
-          of(this.secure),
-        ]).pipe(map(([updating, secure]) => updating || !secure)),
-      },
-    ],
     Manage: [
       {
         title: 'Software Update',
@@ -391,6 +368,15 @@ export class ServerShowPage {
             : this.checkForEosUpdate(),
         detail: false,
         disabled$: this.eosService.updatingOrBackingUp$,
+      },
+      {
+        title: 'Backups',
+        description: 'Create, restore, and schedule backups',
+        icon: 'file-tray-stacked-outline',
+        action: () =>
+          this.navCtrl.navigateForward(['backups'], { relativeTo: this.route }),
+        detail: true,
+        disabled$: of(false),
       },
       {
         title: 'Set Device Name',
