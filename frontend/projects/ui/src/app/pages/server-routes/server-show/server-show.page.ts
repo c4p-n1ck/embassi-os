@@ -370,15 +370,6 @@ export class ServerShowPage {
         disabled$: this.eosService.updatingOrBackingUp$,
       },
       {
-        title: 'Backups',
-        description: 'Create, restore, and schedule backups',
-        icon: 'file-tray-stacked-outline',
-        action: () =>
-          this.navCtrl.navigateForward(['backups'], { relativeTo: this.route }),
-        detail: true,
-        disabled$: of(false),
-      },
-      {
         title: 'Set Device Name',
         description: 'Give your device a name for easy identification',
         icon: 'pricetag-outline',
