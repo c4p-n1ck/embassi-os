@@ -19,6 +19,7 @@ import { AppComponent } from './app.component'
 import { AppRoutingModule } from './app-routing.module'
 import { OSWelcomePageModule } from './modals/os-welcome/os-welcome.module'
 import { GenericInputComponentModule } from './modals/generic-input/generic-input.component.module'
+import { GenericFormPageModule } from './modals/generic-form/generic-form.module'
 import { MarketplaceModule } from './marketplace.module'
 import { PreloaderModule } from './app/preloader/preloader.module'
 import { FooterModule } from './app/footer/footer.module'
@@ -47,6 +48,7 @@ import { TuiResizerModule } from '@taiga-ui/cdk'
     OSWelcomePageModule,
     MarkdownModule,
     GenericInputComponentModule,
+    GenericFormPageModule,
     MonacoEditorModule,
     SharedPipesModule,
     MarketplaceModule,
