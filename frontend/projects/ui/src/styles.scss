@@ -299,3 +299,27 @@ h2 {
 .fader {
   animation: flickerAnimation 4s infinite;
 }
+
+.grid-headings {
+  font-weight: bold;
+  background: var(--ion-color-medium-tint);
+}
+
+.grid-row-border {
+  border-bottom: 1px solid rgb(54, 54, 54);
+}
+
+.grid-fixed {
+  overflow: auto;
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  /* IE and Edge */
+  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: none;
+}
