@@ -431,17 +431,20 @@ export class MockApiService extends ApiService {
 
   async addBackupTarget(
     type: BackupTargetType,
-    params: RR.AddCifsBackupTargetReq | RR.AddCloudBackupTargetReq,
+    params:
+      | RR.AddCifsBackupTargetReq
+      | RR.AddCloudBackupTargetReq
+      | RR.AddDiskBackupTargetReq,
   ): Promise<RR.AddBackupTargetRes> {
     await pauseFor(2000)
-    const { hostname, path, username } = params
+    const { path, name } = params
     return {
       id: 'latfgvwdbhjsndmk',
-      name: 'Local Macbook',
+      name,
       type: 'cifs',
-      hostname,
+      hostname: 'mockhotname',
       path: path.replace(/\\/g, '/'),
-      username,
+      username: 'mockusername',
       mountable: true,
       'embassy-os': null,
     }
@@ -452,7 +455,7 @@ export class MockApiService extends ApiService {
     params: RR.UpdateCifsBackupTargetReq | RR.UpdateCloudBackupTargetReq,
   ): Promise<RR.UpdateBackupTargetRes> {
     await pauseFor(2000)
-    return Mock.BackupTargets.find(b => b.id === params.id)!
+    return Mock.BackupTargets.saved.find(b => b.id === params.id)!
   }
 
   async removeBackupTarget(
@@ -476,7 +479,7 @@ export class MockApiService extends ApiService {
     return {
       id: 'hjdfbjsahdbn',
       name: params.name,
-      target: Mock.BackupTargets[0],
+      target: Mock.BackupTargets.saved[0],
       cron: params.cron,
       'package-ids': params['package-ids'],
     }

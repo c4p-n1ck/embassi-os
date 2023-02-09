@@ -90,7 +90,6 @@ export class NotificationsPage {
 
   async presentAlertDeleteAll() {
     const alert = await this.alertCtrl.create({
-      backdropDismiss: false,
       header: 'Delete All?',
       message: 'Are you sure you want to delete all notifications?',
       buttons: [
