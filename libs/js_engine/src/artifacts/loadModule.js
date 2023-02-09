@@ -235,7 +235,7 @@ const runRsync = (
   };
 };
 
-globalThis.runCallback = (uuid, data) => callbackMapping[uuid](data);
+globalThis.runCallback = (uuid, args) => callbackMapping[uuid](...args);
 
 const getServiceConfig = async (
   {
