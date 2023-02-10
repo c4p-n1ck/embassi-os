@@ -1,13 +1,8 @@
 <ion-content>
-  <theme-switcher class="switcher"></theme-switcher>
   <ion-grid class="grid">
     <ion-row class="row">
       <ion-col>
-        <img
-          src="assets/img/{{ (themeSwitcher | async) ? 'logo' : 'logo_dark' }}.png"
-          alt=""
-          class="logo"
-        />
+        <img src="assets/img/logo_dark.png" alt="" class="logo" />
 
         <ion-card>
           <ion-card-header>
@@ -17,7 +12,7 @@
           <ion-card-content class="ion-margin">
             <form class="form" (submit)="submit()">
               <ion-item-group>
-                <ion-item [color]="(themeSwitcher | async) ? 'dark' : 'light'">
+                <ion-item color="light">
                   <ion-icon
                     slot="start"
                     name="key-outline"
@@ -30,11 +25,7 @@
                     [(ngModel)]="password"
                     (ionChange)="error = ''"
                   ></ion-input>
-                  <ion-button
-                    fill="clear"
-                    [color]="(themeSwitcher | async) ? 'light' : 'dark'"
-                    (click)="toggleMask()"
-                  >
+                  <ion-button fill="clear" color="dark" (click)="toggleMask()">
                     <ion-icon
                       slot="icon-only"
                       size="small"

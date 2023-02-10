@@ -4,7 +4,6 @@ import { ApiService } from 'src/app/services/api/embassy-api.service'
 import { AuthService } from 'src/app/services/auth.service'
 import { Router } from '@angular/router'
 import { ConfigService } from 'src/app/services/config.service'
-import { ThemeSwitcherService } from '@start9labs/shared'
 
 @Component({
   selector: 'login',
@@ -24,7 +23,6 @@ export class LoginPage {
     private readonly loadingCtrl: LoadingController,
     private readonly api: ApiService,
     private readonly config: ConfigService,
-    readonly themeSwitcher: ThemeSwitcherService,
   ) {}
 
   async ionViewDidEnter() {

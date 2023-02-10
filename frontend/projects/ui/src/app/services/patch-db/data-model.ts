@@ -20,6 +20,7 @@ export interface UIData {
     }
   }
   'ack-instructions': Record<string, boolean>
+  theme: string
   widgets: {
     open: boolean
     width: number

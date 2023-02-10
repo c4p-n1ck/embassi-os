@@ -7,13 +7,13 @@ import {
   Optional,
   Type,
 } from '@angular/core'
-import { TuiDestroyService, TuiResizeService, tuiWatch } from '@taiga-ui/cdk'
+import { TuiDestroyService, TuiResizeService } from '@taiga-ui/cdk'
 import { TuiDialogContext, TuiDialogService } from '@taiga-ui/core'
 import {
   PolymorpheusComponent,
   POLYMORPHEUS_CONTEXT,
 } from '@tinkoff/ng-polymorpheus'
-import { distinctUntilChanged, map, startWith, takeUntil } from 'rxjs'
+import { distinctUntilChanged, map, startWith } from 'rxjs'
 import { PatchDB } from 'patch-db-client'
 import { DataModel, Widget } from '../../services/patch-db/data-model'
 import { ApiService } from '../../services/api/embassy-api.service'

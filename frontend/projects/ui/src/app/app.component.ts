@@ -1,7 +1,6 @@
 import { Component, OnDestroy } from '@angular/core'
 import { merge } from 'rxjs'
 import { PatchDB } from 'patch-db-client'
-import { ThemeSwitcherService } from '@start9labs/shared'
 import { AuthService } from './services/auth.service'
 import { SplitPaneTracker } from './services/split-pane.service'
 import { PatchDataService } from './services/patch-data.service'
@@ -13,6 +12,7 @@ import { DataModel } from './services/patch-db/data-model'
 import { tuiDebounce } from '@taiga-ui/cdk'
 import { ApiService } from './services/api/embassy-api.service'
 import { WidgetsService } from './pages/widgets/built-in/widgets.service'
+import { ThemeSwitcherService } from './services/theme-switcher.service'
 
 @Component({
   selector: 'app-root',

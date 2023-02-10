@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
 import { IonicModule } from '@ionic/angular'
 import { LoginPage } from './login.page'
-import { SharedPipesModule, ThemeSwitcherModule } from '@start9labs/shared'
+import { SharedPipesModule } from '@start9labs/shared'
 
 const routes: Routes = [
   {
@@ -19,7 +19,6 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     SharedPipesModule,
-    ThemeSwitcherModule,
     RouterModule.forChild(routes),
   ],
   declarations: [LoginPage],
